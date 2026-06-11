@@ -1,0 +1,12 @@
+population_size         "--population_size "          i       (50, 500)
+elite_percentage        "--elite_percentage "          r       (0.10, 0.40)
+mutants_percentage      "--mutants_percentage "        r       (0.05, 0.30)
+num_elite_parents       "--num_elite_parents "         i       (1, 5)
+total_parents           "--total_parents "             i       (2, 8)
+bias_type                  "--bias_type "                    c    (LOGINVERSE, LINEAR, QUADRATIC, CUBIC, EXPONENTIAL)
+num_independent_populations "--num_independent_populations " i    (1, 4)
+exchange_interval          "--exchange_interval "            i    (50, 500)
+reset_interval             "--reset_interval "               i    (0, 600)
+
+[forbidden]
+num_elite_parents >= total_parents

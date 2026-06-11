@@ -1,0 +1,2 @@
+population_size elite_percentage mutants_percentage num_elite_parents total_parents bias_type num_independent_populations exchange_interval reset_interval
+132 0.3324 0.2961 2 7 QUADRATIC 2 417 204

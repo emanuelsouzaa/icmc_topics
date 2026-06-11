@@ -1,0 +1,265 @@
+# 2026-06-10 11:41:21 -03: Reading parameter file '/home/emanuel/topicos/irace/parameters.txt'.
+# 2026-06-10 11:41:21 -03: 1 expression(s) specifying forbidden configurations read.
+# --- Parameters Hierarchy ---
+                    Parameter Level                  Depends.on
+1             population_size     1             population_size
+2            elite_percentage     1            elite_percentage
+3          mutants_percentage     1          mutants_percentage
+4           num_elite_parents     1           num_elite_parents
+5               total_parents     1               total_parents
+6                   bias_type     1                   bias_type
+7 num_independent_populations     1 num_independent_populations
+8           exchange_interval     1           exchange_interval
+9              reset_interval     1              reset_interval
+# ------------------------
+## irace scenario:
+scenarioFile = "/home/emanuel/topicos/irace/scenario.txt"
+execDir = "/home/emanuel/topicos/irace"
+parameterFile = "/home/emanuel/topicos/irace/parameters.txt"
+parameters = <environment>
+initConfigurations = NULL
+configurationsFile = ""
+logFile = "/home/emanuel/topicos/irace/irace.log"
+recoveryFile = ""
+instances = "/home/emanuel/topicos/instancias/A-n32-k5.vrp"
+trainInstancesDir = "/home/emanuel/topicos/instancias"
+trainInstancesFile = "/home/emanuel/topicos/irace/instances.txt"
+sampleInstances = TRUE
+testInstancesDir = ""
+testInstancesFile = ""
+testInstances = NULL
+testNbElites = 1L
+testIterationElites = FALSE
+testType = "friedman"
+firstTest = 5L
+blockSize = 1L
+eachTest = 1L
+targetRunner = "/home/emanuel/topicos/irace/target-runner.py"
+targetRunnerLauncher = ""
+targetCmdline = "{configurationID} {instanceID} {seed} {instance} {bound} {targetRunnerArgs}"
+targetRunnerRetries = 0L
+targetRunnerTimeout = 0L
+targetRunnerData = ""
+targetRunnerParallel = NULL
+targetEvaluator = NULL
+deterministic = FALSE
+maxExperiments = 1000L
+minExperiments = NA_character_
+maxTime = 0L
+budgetEstimation = 0.05
+minMeasurableTime = 0.01
+parallel = 6L
+loadBalancing = TRUE
+mpi = FALSE
+batchmode = "0"
+quiet = FALSE
+debugLevel = 1L
+seed = 123L
+softRestart = TRUE
+softRestartThreshold = 1e-04
+elitist = TRUE
+elitistNewInstances = 1L
+elitistLimit = 2L
+repairConfiguration = NULL
+capping = FALSE
+cappingAfterFirstTest = FALSE
+cappingType = "median"
+boundType = "candidate"
+boundMax = NULL
+boundDigits = 0L
+boundPar = 1L
+boundAsTimeout = TRUE
+postselection = TRUE
+aclib = FALSE
+nbIterations = 0L
+nbExperimentsPerIteration = 0L
+minNbSurvival = 1L
+nbConfigurations = 0L
+mu = 5L
+confidence = 0.95
+## end of irace scenario
+# 2026-06-10 11:41:21 -03: Initialization
+# Elitist race
+# Elitist new instances: 1
+# Elitist limit: 2
+# nbIterations: 5
+# minNbSurvival: 1
+# nbParameters: 9
+# seed: 123
+# confidence level: 0.95
+# budget: 1000
+# mu: 5
+# deterministic: FALSE
+
+# 2026-06-10 11:41:21 -03: Iteration 1 of 5
+# experimentsUsed: 0
+# remainingBudget: 1000
+# currentBudget: 200
+# nbConfigurations: 33
+# 2026-06-10 11:41:21 -03: Sample 33 configurations from Sobol distribution
+# 2026-06-10 11:41:21 -03: Launch race
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . Alive configurations were already evaluated on this instance and nothing is discarded.
+     : All alive configurations are elite, but some need to be evaluated on this instance.
+
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|       Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+|x|          1|         33|          7|     886.0962531|         33|00:18:25|   NA|  NA|    NA|
+|x|          2|         33|          7|     886.0962531|         66|00:18:27|+0.93|0.97|0.0484|
+|x|          3|         33|          7|     886.0962531|         99|00:18:28|+0.95|0.96|0.0352|
+|x|          4|         33|          7|     886.0962531|        132|00:18:28|+0.92|0.94|0.0657|
+|-|          5|          5|          7|     886.0962531|        165|00:18:25|+0.56|0.65|0.1842|
+|-|          6|          2|          7|     886.0962531|        170|00:03:03|+0.33|0.44|0.3333|
+|=|          7|          2|          7|     886.0962531|        172|00:03:02|+0.05|0.18|0.4762|
+|=|          8|          2|          7|     886.0962531|        174|00:03:03|-0.07|0.06|0.5357|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+# Stopped because tests without elimination (2) >= elitistLimit (2)
+Best-so-far configuration:           7    mean value:      886.0962531
+Description of the best-so-far configuration:
+  .ID. population_size elite_percentage mutants_percentage num_elite_parents
+7    7             258           0.1879             0.1464                 3
+  total_parents bias_type num_independent_populations exchange_interval
+7             6 QUADRATIC                           4               401
+  reset_interval .PARENT.
+7            447       NA
+
+# 2026-06-10 13:22:46 -03: Extracting elites
+# 2026-06-10 13:22:46 -03: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+  .ID. population_size elite_percentage mutants_percentage num_elite_parents
+7    7             258           0.1879             0.1464                 3
+  total_parents bias_type num_independent_populations exchange_interval
+7             6 QUADRATIC                           4               401
+  reset_interval .PARENT. .RANK. .WEIGHT.
+7            447       NA     11        1
+# 2026-06-10 13:22:46 -03: Initialise model
+# 2026-06-10 13:22:46 -03: End of iteration 1
+# 2026-06-10 13:22:46 -03: Iteration 2 of 5
+# experimentsUsed: 174
+# remainingBudget: 826
+# currentBudget: 206
+# nbConfigurations: 23
+# 2026-06-10 13:22:46 -03: Update model
+# 2026-06-10 13:22:46 -03: Sample 22 configurations from model
+# 2026-06-10 13:22:46 -03: Computing similarity of configurations ................... DONE
+# 2026-06-10 13:22:46 -03: Launch race
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . Alive configurations were already evaluated on this instance and nothing is discarded.
+     : All alive configurations are elite, but some need to be evaluated on this instance.
+
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|       Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+|x|          9|         23|          7|     886.0962531|         23|00:12:19|   NA|  NA|    NA|
+|x|          7|         23|          7|     886.0962531|         45|00:12:20|+0.83|0.91|0.0736|
+|x|          4|         23|          7|     886.0962531|         67|00:12:19|+0.83|0.89|0.0599|
+|x|          5|         23|          7|     886.0962531|         89|00:12:20|+0.85|0.89|0.0506|
+|-|          6|          3|          7|     886.0962531|        111|00:12:18|+1.00|1.00|0.0467|
+|-|          2|          1|          7|     886.0962531|        113|00:03:03|   NA|  NA|    NA|
+|.|          1|          1|          7|     886.0962531|        113|00:00:00|   NA|  NA|    NA|
+|.|          3|          1|          7|     886.0962531|        113|00:00:00|   NA|  NA|    NA|
+|.|          8|          1|          7|     886.0962531|        113|00:00:00|   NA|  NA|    NA|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+# Stopped because number of alive configurations (1) <= minimum number of configurations (1)
+Best-so-far configuration:           7    mean value:      886.0962531
+Description of the best-so-far configuration:
+  .ID. population_size elite_percentage mutants_percentage num_elite_parents
+7    7             258           0.1879             0.1464                 3
+  total_parents bias_type num_independent_populations exchange_interval
+7             6 QUADRATIC                           4               401
+  reset_interval .PARENT.
+7            447       NA
+
+# 2026-06-10 14:27:27 -03: Extracting elites
+# 2026-06-10 14:27:27 -03: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+  .ID. population_size elite_percentage mutants_percentage num_elite_parents
+7    7             258           0.1879             0.1464                 3
+  total_parents bias_type num_independent_populations exchange_interval
+7             6 QUADRATIC                           4               401
+  reset_interval .PARENT. .RANK. .WEIGHT.
+7            447       NA      1        1
+# 2026-06-10 14:27:27 -03: End of iteration 2
+# 2026-06-10 14:27:27 -03: Iteration 3 of 5
+# experimentsUsed: 287
+# remainingBudget: 713
+# currentBudget: 237
+# nbConfigurations: 24
+# 2026-06-10 14:27:27 -03: Update model
+# 2026-06-10 14:27:27 -03: Sample 23 configurations from model
+# 2026-06-10 14:27:27 -03: Computing similarity of configurations ..................... DONE
+# 2026-06-10 14:27:27 -03: Launch race
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . Alive configurations were already evaluated on this instance and nothing is discarded.
+     : All alive configurations are elite, but some need to be evaluated on this instance.
+
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|       Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+|x|         10|         24|          7|     886.0962531|         24|00:12:24|   NA|  NA|    NA|
+|x|          6|         24|          7|     886.0962531|         47|00:12:20|+0.91|0.96|0.1162|
+|x|          5|         24|          7|     886.0962531|         70|00:12:21|+0.94|0.96|0.0661|
+|x|          2|         24|          7|     886.0962531|         93|00:12:23|+0.93|0.95|0.0594|
+|-|          9|          3|          7|     886.0962531|        116|00:12:21|+1.00|1.00|0.0000|
+|-|          3|          1|          7|     886.0962531|        118|00:03:02|   NA|  NA|    NA|
+|.|          1|          1|          7|     886.0962531|        118|00:00:00|   NA|  NA|    NA|
+|.|          4|          1|          7|     886.0962531|        118|00:00:00|   NA|  NA|    NA|
+|.|          8|          1|          7|     886.0962531|        118|00:00:00|   NA|  NA|    NA|
+|.|          7|          1|          7|     886.0962531|        118|00:00:00|   NA|  NA|    NA|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+# Stopped because number of alive configurations (1) <= minimum number of configurations (1)
+Best-so-far configuration:           7    mean value:      886.0962531
+Description of the best-so-far configuration:
+  .ID. population_size elite_percentage mutants_percentage num_elite_parents
+7    7             258           0.1879             0.1464                 3
+  total_parents bias_type num_independent_populations exchange_interval
+7             6 QUADRATIC                           4               401
+  reset_interval .PARENT.
+7            447       NA
+
+# 2026-06-10 15:32:20 -03: Extracting elites
+# 2026-06-10 15:32:20 -03: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+  .ID. population_size elite_percentage mutants_percentage num_elite_parents
+7    7             258           0.1879             0.1464                 3
+  total_parents bias_type num_independent_populations exchange_interval
+7             6 QUADRATIC                           4               401
+  reset_interval .PARENT. .RANK. .WEIGHT.
+7            447       NA      1        1
+# 2026-06-10 15:32:20 -03: End of iteration 3
+# 2026-06-10 15:32:20 -03: Iteration 4 of 5
+# experimentsUsed: 405
+# remainingBudget: 595
+# currentBudget: 297
+# nbConfigurations: 27
+# 2026-06-10 15:32:20 -03: Update model
+# 2026-06-10 15:32:20 -03: Sample 26 configurations from model
+# 2026-06-10 15:32:20 -03: Computing similarity of configurations ......................... DONE
+# 2026-06-10 15:32:20 -03: Launch race
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . Alive configurations were already evaluated on this instance and nothing is discarded.
+     : All alive configurations are elite, but some need to be evaluated on this instance.
+
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|       Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+|x|         11|         27|         97|     879.8920310|         27|00:15:23|   NA|  NA|    NA|
+|x|          1|         27|         97|     879.0639199|         53|00:15:22|+0.99|0.99|0.0159|

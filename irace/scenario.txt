@@ -1,0 +1,30 @@
+# Arquivo de configuração do irace
+
+# Caminho onde está o target-runner
+targetRunner = "./target-runner.py"
+
+# Caminho onde está o arquivo de parâmetros
+parameterFile = "./parameters.txt"
+
+# Caminho onde está o arquivo de instâncias
+trainInstancesDir = "../instancias"
+
+# Caminho onde está o arquivo contendo a lista de instâncias
+trainInstancesFile = "./instances.txt"
+
+# Budget total de avaliações
+maxExperiments = 1000
+
+# Número de execuções por configuração por instância
+minNbSurvival = 1
+
+# configurationsFile = "./init_config.txt"
+
+# Seed para reprodutibilidade
+seed = 123
+
+# Log detalhado
+logFile = "./irace.log"
+debugLevel = 1
+
+parallel = 6
