@@ -41,60 +41,6 @@ class VRPDecoder:
                 "customer demand exceeds vehicle capacity."
             )
 
-    def two_swap(self, routes: list[list[int]]) -> list[list[int]]:
-        improved = True
-        loads = [sum(self.demands[c] for c in r) for r in routes]
-
-        while improved:
-            improved = False
-            for i in range(len(routes)):
-                for j in range(i + 1, len(routes)):
-                    for id_a in range(len(routes[i])):
-                        for id_b in range(len(routes[j])):
-                            u = routes[i][id_a]
-                            v = routes[j][id_b]
-
-                            load_a = (
-                                loads[i]
-                                - self.demands[u]
-                                + self.demands[v]
-                            )
-                            load_b = (
-                                loads[j]
-                                - self.demands[v]
-                                + self.demands[u]
-                            )
-
-                            if (
-                                load_a > self.vehicle_capacity
-                                or load_b > self.vehicle_capacity
-                            ):
-                                continue
-
-                            before = (
-                                self.cost_per_route(routes[i])
-                                + self.cost_per_route(routes[j])
-                            )
-
-                            new_i = routes[i][:]
-                            new_j = routes[j][:]
-                            new_i[id_a] = v
-                            new_j[id_b] = u
-
-                            after = (
-                                self.cost_per_route(new_i)
-                                + self.cost_per_route(new_j)
-                            )
-
-                            if after < before - 1e-6:
-                                routes[i] = new_i
-                                routes[j] = new_j
-                                loads[i] = load_a
-                                loads[j] = load_b
-                                improved = True
-
-        return routes
-
     def decode(self, chromosome: BaseChromosome, rewrite: bool) -> float:
         """
         Decode a BRKGA chromosome and return its objective value.

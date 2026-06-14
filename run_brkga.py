@@ -89,14 +89,13 @@ def run_brkga(
                 routes_best = decoder.get_routes(
                     brkga_vrp.get_best_chromosome()
                 )
-                routes_best_local = decoder.two_swap(routes_best)
-                cost = decoder.total_cost(routes_best_local)
+                cost = brkga_vrp.get_best_fitness()
                 curve.append(cost)
 
                 if cost < best_cost:
                     best_cost = cost
                     best_iter = it
-                    best_routes = routes_best_local
+                    best_routes = routes_best
 
             all_costs.append(best_cost)
             all_curves.append(curve)
@@ -180,7 +179,9 @@ def run_brkga(
             "melhor custo",
             "gap melhor",
             "pior custo",
-            "dispersao"
+            "dispersao",
+            "desvio padrao",
+            "media"
         ]
 
         writer_final = csv.DictWriter(csv_file, fieldnames=field_names_final)
@@ -196,6 +197,8 @@ def run_brkga(
             "gap melhor": round(gap_best, 2),
             "pior custo": round(worst_cost, 4),
             "dispersao": round(dispersion, 2),
+            "desvio padrao": round(std_cost, 2),
+            "media": round(mean_cost, 2)
         })
 
     # Grafico da melhor solução.

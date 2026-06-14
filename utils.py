@@ -24,7 +24,7 @@ def plot_routes(
     coords = np.asarray(coords)
     demands = np.asarray(demands)
 
-    fig, ax = plt.subplots(figsize=(8, 8))
+    fig, ax = plt.subplots(figsize=(7, 6.5))
 
     is_customer = np.arange(len(demands)) != depot
 

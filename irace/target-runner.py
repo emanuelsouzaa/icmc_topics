@@ -58,9 +58,7 @@ def run(instance_path, seed, population_size, elite_percentage,
 
         while time.time() - t0 < max_time:
             brkga.evolve()
-            routes_best = decoder.get_routes(brkga.get_best_chromosome())
-            routes_best = decoder.two_swap(routes_best)
-            cost = decoder.total_cost(routes_best)
+            cost = brkga.get_best_fitness()
 
             if cost < best_cost - 1e-6:
                 best_cost = cost

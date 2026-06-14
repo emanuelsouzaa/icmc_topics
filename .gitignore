@@ -154,7 +154,7 @@ activemq-data/
 env/
 venv/
 ENV/
-env.bak/
+env.bak/    
 venv.bak/
 
 # Spyder project settings
@@ -216,3 +216,5 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+results
